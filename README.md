@@ -32,11 +32,9 @@ complex) instructions.
         -with our program midmark took around 28 seconds to complete
 
 # Unit Testing
-   /*************************************************************************
    ** assume every instruction set after the halt unit-tests ends with a halt
            instruction
    ** all tests are diff tested against demo implementation
-   *************************************************************************/
 
 halt.um: a single halt instruction
         tests if the halt instruction stops a program
