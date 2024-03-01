@@ -4,18 +4,18 @@ creates a working implementation of a Turing universal machine emulator
 # Architecture
 Our modules include "operation", "address_space", and "um". <br />
 
-operations: implements the executions of reading and running the 14 machine 
+**operations:** implements the executions of reading and running the 14 machine 
                 instructions <br />
         -holds the 8 registers neccesary for our machine <br />
         -only our run_program function can be 
         accessed outside of operation, all individual instruction
-        functions are "private"
+        functions are "private"<br />
 <br />
-address_space: implements a virtual memory space. <br />
+**address_space:** implements a virtual memory space. <br />
         -Responsible for hiding the data structures used from the client <br />
-        -Manages the mapping and unmapping of memory segments.
+        -Manages the mapping and unmapping of memory segments.<br />
 <br />
-um: Holds the main function responsible for initializing the address space, 
+**um:** Holds the main function responsible for initializing the address space, 
         reading instructions, and calling the run_program function.
         
 # 50 million instructions
