@@ -1,11 +1,6 @@
 # um
-
-README
-Kaelen Song and Mia Taylor 
-12/4/2023
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//* * Architecture * *\\
-
+creates a working implementation of a Turing universal machine emulator
+# Architecture
 Our modules include "operation", "address_space", and "um".
 
 operations: implements the executions of reading and running the 14 machine 
@@ -21,9 +16,8 @@ address_space: implements a virtual memory space.
 
 um: Holds the main function responsible for initializing the address space, 
         reading instructions, and calling the run_program function.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//* * 50 million instructions * *\\
+        
+# 50 million instructions
 How long does it take UM to execute 50 million instructions, and how do 
 you know?
 
@@ -36,9 +30,8 @@ For more complex instructions we estimate it would be about 15 seconds based
 on our 500_instruct test and midmark which we know has 80 million (more 
 complex) instructions.
         -with our program midmark took around 28 seconds to complete
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//* * Unit Testing * *\\
 
+# Unit Testing
    /*************************************************************************
    ** assume every instruction set after the halt unit-tests ends with a halt
            instruction
@@ -108,46 +101,8 @@ load_map.um: calls load val and then maps segement
         tests that output is 0 
         loads value, then maps, and then loads
         segment which should be 0
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**Information about lab notes**
-Due to the long runtime of advent on our first two versions, we were not 
-able to get a total time. You can see the first time we got a time was when
-we ran with -02. Similarly we were not able to start documenting instruction
-counts until valgrind could run in under 12 hours. We documented this problem
-in our lab notes as well.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**Optimization and potentional hotspots**
-What routine in the final um takes up the most time, and what if any, 
-improvements can be made: 
 
-run_program takes up the most amount of time, more specifically...
-
-...we found two potential hotspots in our code:
-
-The first is the switch statement used to select the code to run for each 
-opcode from an instruction and the if statement to check if opcode = 13. 
-This is a hotspot as it must happen for every instruction that is given 
-to the UM. One way this could be improved is:
-
-Finding a new way to execute certain commands like a jump table. We see that 
-seg_store and seg_load happen the most in midmark, so if optimizing for this 
-program specifically, we could put those instruction functions higher up in 
-the switch statement.
-
-The second hotspot we found was the map() function, specifically the memset 
-used to set words in the memory segment to zero:
-One way this could be solved is if we created our own memory pool of 
-pre-initialized to zero memory that could be used to initialize 
-new memory segments. However the specific assmebly code of memset can not be
-optmized by us.
-
-One way to potentially improve the assembly code would be to have more 
-variables passed in as local variables in order to lessen the amount of calls
-to main memory where the global variables are found.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//* * Hours Spent: * *\\
-
+# Hours Spent
 Analyzing: 10 hours
 Preparing: 5 hours
 Solving: 37 hours
