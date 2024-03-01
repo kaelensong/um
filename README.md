@@ -2,7 +2,6 @@
 
 README
 Kaelen Song and Mia Taylor 
-ksong05, mtaylo16
 12/4/2023
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //* * Architecture * *\\
