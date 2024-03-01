@@ -5,28 +5,28 @@ creates a working implementation of a Turing universal machine emulator
 Our modules include "operation", "address_space", and "um". <br />
 
 operations: implements the executions of reading and running the 14 machine 
-                instructions
+                instructions <br />
         -holds the 8 registers neccesary for our machine
         -only our run_program function can be 
         accessed outside of operation, all individual instruction
         functions are "private"
-
+<br />
 address_space: implements a virtual memory space. 
         -Responsible for hiding the data structures used from the client
         -Manages the mapping and unmapping of memory segments.
-
+<br />
 um: Holds the main function responsible for initializing the address space, 
         reading instructions, and calling the run_program function.
         
 # 50 million instructions
 How long does it take UM to execute 50 million instructions, and how do 
-you know?
-
+you know? 
+<br />
 It should take about 7 seconds to execute 50 million simple instructions.
 We know this because we wrote a test called 500_instruct which runs 500,000 
 load value instructions. We timed this test and it took about 1 second to 
 complete. So 1 * 5 million / 500,000 = 100. 
-
+<br />
 For more complex instructions we estimate it would be about 15 seconds based 
 on our 500_instruct test and midmark which we know has 80 million (more 
 complex) instructions.
@@ -34,18 +34,19 @@ complex) instructions.
 
 # Unit Testing
    ** assume every instruction set after the halt unit-tests ends with a halt
-           instruction
+           instruction 
+          <br />
    ** all tests are diff tested against demo implementation
-
-halt.um: a single halt instruction
+<br />
+<br />halt.um: a single halt instruction
         tests if the halt instruction stops a program
-halt-verbose.um: a halt instruction followed by other
+<br />halt-verbose.um: a halt instruction followed by other
         tests that after a halt occurs no additional instructions are completed
-load_val.um: loads values into all 8 registers
+<br />load_val.um: loads values into all 8 registers
         tests if registers are properly set up and accessible
-loadval_overwrite.um: loads values into r[1] 8 times
+<br />loadval_overwrite.um: loads values into r[1] 8 times
         tests that registers can be overwritten
-output_test.um: loads one value (<255) into r1 and outputs it
+<br />output_test.um: loads one value (<255) into r1 and outputs it
         tests basic output functionailty
 output_complex.um: tests outputing all ascii characters from 0-255 as one byte
         checks output cability for all ascii characters
