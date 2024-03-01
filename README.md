@@ -61,7 +61,7 @@ complex) instructions.
 <br />nand.um: ~(97 & 0x0F) = , outputs the result, then halts
         check basic nand functionailty
 <br />print-six.um: prints ascii 6, which is gotton from addition
-        testing load value, addition and outputting the result   
+        testing load value, addition and outputting the result
 <br />cond_mov.um: calls cond mov when register c is 0
         checks functionality when contencts are zero
 <br />cond_movNot.um: calls cond mov wehn register != 0
