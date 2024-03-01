@@ -2,7 +2,7 @@
 creates a working implementation of a Turing universal machine emulator
 
 # Architecture
-Our modules include "operation", "address_space", and "um".
+Our modules include "operation", "address_space", and "um". <br />
 
 operations: implements the executions of reading and running the 14 machine 
                 instructions
