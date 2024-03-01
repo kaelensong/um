@@ -6,13 +6,13 @@ Our modules include "operation", "address_space", and "um". <br />
 
 operations: implements the executions of reading and running the 14 machine 
                 instructions <br />
-        -holds the 8 registers neccesary for our machine
+        -holds the 8 registers neccesary for our machine <br />
         -only our run_program function can be 
         accessed outside of operation, all individual instruction
         functions are "private"
 <br />
-address_space: implements a virtual memory space. 
-        -Responsible for hiding the data structures used from the client
+address_space: implements a virtual memory space. <br />
+        -Responsible for hiding the data structures used from the client <br />
         -Manages the mapping and unmapping of memory segments.
 <br />
 um: Holds the main function responsible for initializing the address space, 
